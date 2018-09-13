@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function foo() {
+		    var a = 2;
+		    this.bar();
+		}
+		
+		function bar() {
+
+		    console.log( this.a );
+		}
+		
+		foo(); // ReferenceError: a is not defined
+	</script>
+</html>
