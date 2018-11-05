@@ -1,0 +1,3 @@
+实际上原型链最重要的是一个叫做委托的东西。
+并且constructor并不是真正的constructor，只有使用new关键词的时候function才会转换为constructor。
+实际上原型链是一个原型链，'构造函数'依旧是一个实例，所以有了上一句话。

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//重新指向之后将变得有_proto_  那怎么存储一个结构体呢
+		var a = Object.create(null);
+		console.log(a);
+		a = {
+			asd:'asdad',
+		};
+		console.log(a);
+		var b = new Object();
+		console.log(b);
+	</script>
+</html>

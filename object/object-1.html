@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		console.log( null instanceof Object);
+		console.log(typeof null);
+		//此处是因为js的设计缺陷。typeof识别的时候，因为obj的二进制前三位为0，而null在0x00中，所以typeof默认null的前三位为0，所以为obj
+	</script>
+</html>

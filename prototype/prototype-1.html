@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//function 隶属于object
+		var anotherObject = { 
+		    a:2,
+			b:{
+				c:'asd'
+			}
+		};
+		
+//		anotherObject.defineProperties('a',{})
+		
+		// 创建一个关联到anotherObject的对象
+		var myObject = Object.create( anotherObject ); 
+//		car myObject = new anotherObject;
+//		myObject.b = 3
+//		myObject.__proto__.a = 333;
+		console.log(myObject.b); // 2
+		console.log(anotherObject)
+	</script>
+</html>

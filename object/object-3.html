@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//当只定义了getter的时候是没有setter函数的。所以赋值会失败。
+		//定义setter以后会改变值，但是访问结果还是不会改变。
+		var myObject = {
+		    //给a定义一个getter 
+		    get a() {
+		        return 2; 
+		    },
+			set a(val) {
+//				this.a = val * 2;//错误写法，会无限递归。
+				this._a_ = val * 2;//只有保留在其他参数内。   但是如果想自定义setter和getter函数只有成对出现，并且参数为同一个。
+			}
+		};
+		
+		Object.defineProperty(
+		    myObject,  // 目标对象
+		    "b",         // 属性名
+		    {           // 描述符
+		        // 给b设置一个getter
+		        get: function(){ return this.a * 2 },
+		
+		        // 确保b会出现在对象的属性列表中
+		        enumerable: true 
+		    }
+		);
+		
+		myObject.a = 555;//实际上并没有修改成功。
+		console.log(myObject.a); // 2
+		
+		myObject.b; // 4
+	</script>
+</html>
